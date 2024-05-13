@@ -21,7 +21,7 @@ app.get('/', (req, res)=>{
 
 const io = require("socket.io")(8800, {
   cors: {
-    origin: "http://localhost:5173",
+    origin: "https://master--handyman-home-services.netlify.app/",
   },
 });
 
