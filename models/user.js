@@ -37,7 +37,8 @@ const userShema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Profile', 
   },
-});
+},{ timestaps: true }
+);
 
 
 module.exports = mongoose.model("User", userShema);

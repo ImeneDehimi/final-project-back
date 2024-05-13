@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const { array } = require("../config/multer");
 
 const profileSchema = new mongoose.Schema({
   category: {
@@ -38,7 +37,11 @@ const profileSchema = new mongoose.Schema({
   rating: {
     type: Number,
   },
-  comments: [{ type: String }],
+  comments: [{ 
+    rating:Number,
+    text: String ,
+    postedBy :{type:mongoose.Schema.Types.ObjectId,ref:"User"},
+  }],
 });
 
 module.exports = mongoose.model("Profile", profileSchema);

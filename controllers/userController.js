@@ -1,7 +1,5 @@
 const User = require("../models/user");
 
-
-
 // get a user
 exports.getUserById = async (req, res) => {
     try {
@@ -13,8 +11,7 @@ exports.getUserById = async (req, res) => {
     } catch (err) {
       res.status(500).json(err.message);
     }
-  };
-  
+  }; 
 
 //   get all users
   exports.getAllUsers = async (req, res) => {
