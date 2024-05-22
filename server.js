@@ -6,9 +6,16 @@ const cors = require('cors')
 const mongoose = require('mongoose')
 const routes = require("./router/index")
 
+const http = require('http');
+const socketIo = require('socket.io');
+
+
 app.use(express.json())
 
 app.use(cors())
+
+const server = http.createServer(app);
+
 
 // route
 app.use("/" ,routes) 
@@ -19,7 +26,7 @@ app.get('/', (req, res)=>{
 // socket
 
 
-const io = require("socket.io")(8800, {
+const io = require("socket.io")(server, {
   cors: {
     origin: "https://handyman-home-services.netlify.app",
   },
